@@ -1,0 +1,42 @@
+<!-- Vul dit bestand verder aan, zodat het samenwerkt met layout.html, vergeet ook de titel niet -->
+<!-- Bouw in dit bestand een formulier op zoals in de screenshot op de opgave. Het formulier moet niet werken! -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+     profile
+{% endblock %}
+
+{% block user %}
+    class="active"
+{% endblock %}
+
+{% block error %}
+    class="active"
+{% endblock %}
+
+{% block won %}
+    class="active"
+{% endblock %}
+
+{% block lost %}
+    class="active"
+{% endblock %}
+
+{% block body %}
+    <h1>Profile page</h1>
+
+    {% if user %}
+        <h1>profile of {{ user[1] }}!</h1>
+        <h1>User ID: {{ user[0] }}!</h1>
+        <p>{{ user[1] }} won {{ won }} times and lost {{ lost }} times!</p>
+    {% else %}
+        <h1>Welcome to the battleship online game!</h1>
+        <br />
+        <p>Please login!</p>
+    {% endif %}
+
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+{%  endblock %}

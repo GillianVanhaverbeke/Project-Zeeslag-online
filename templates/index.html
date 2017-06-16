@@ -1,0 +1,21 @@
+<!-- Vul dit bestand verder aan, zodat het samenwerkt met layout.html, vergeet ook de titel niet -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+     Homepage
+{% endblock %}
+
+{% block user %}
+    class="active"
+{% endblock %}
+
+{% block body %}
+        {% if user %}
+            <p class="col3"><h1>welcome {{ user[1] }}!</h1></p>
+        {% else %}
+            <h1>Welcome to the battleship online game!</h1>
+            <br />
+            <h1>Please login to start a game!</h1>
+        {% endif %}
+{%  endblock %}

@@ -1,0 +1,29 @@
+<!-- Vul dit bestand verder aan, zodat het samenwerkt met layout.html, vergeet ook de titel niet -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+     Register
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Register</h1>
+        <br />
+
+        <form action="" method="post">
+            <input type="text" placeholder="Username" name="username" class="loginText" value="{{ request.form.username }}">
+            <input type="password" placeholder="Password" name="password" class="loginText" value="{{ request.form.password }}">
+            <input type="password" placeholder="re-type Password" name="passwordSecond" class="loginText" value="{{ request.form.password }}">
+
+            <input type="text" placeholder="Email" name="email" class="loginText" value="{{ request.form.username }}">
+
+
+            <input class="btn btn-default" type="submit" value="Register" name="bsubmit">
+        </form>
+
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+    </div>
+{%  endblock %}

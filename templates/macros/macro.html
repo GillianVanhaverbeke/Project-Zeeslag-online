@@ -1,0 +1,12 @@
+<!-- Maak een macro met de naam nav_link waarin je de verschillende onderdelen van de navigatie opbouwt.
+Je hoeft geen specifieke css toe te voegen. -->
+{% macro print_nav(waarde,url) %}
+    <td><a href="{{ url_for(url,naam=waarde) }}">{{ waarde }}</a></td>
+{% endmacro %}
+
+{% macro createContactForm() %}
+    <p>Naam:</p><input type="text" title="naam" >
+    <p>email:</p><input type="email" title="email"><br />
+
+    <p>Message:</p><input type="Text" title="Message">Type in your message here<br />
+{% endmacro %}

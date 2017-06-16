@@ -1,0 +1,18 @@
+<!-- Vul dit bestand verder aan, zodat het samenwerkt met layout.html, vergeet ook de titel niet -->
+<!-- Bouw in dit bestand een formulier op zoals in de screenshot op de opgave. Het formulier moet niet werken! -->
+
+{% extends "layout.html" %}
+{% block title %}
+     contact
+{% endblock %}
+
+{% block body %}
+    <h1>Contact</h1>
+
+    <form method="post" action="{{ url_for("contact") }}">
+        <fieldset>
+            {{ macro.createContactForm() }}
+            <input type="submit" value="Subscribe to newletter">
+        </fieldset>
+    </form>
+{%  endblock %}

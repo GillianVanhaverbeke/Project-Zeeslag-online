@@ -1,0 +1,39 @@
+<!-- DIT BESTAND ZAL DE BASIS VORMEN VOOR ALLE ANDERE TEMPLATES -->
+
+<!-- Zorg dat elk bestand een juiste title krijgt -->
+<!-- Koppel style.css aan dit bestand -->
+<!-- Bouw een navigatie op door gebruik te maken van een macro (zie macros/macro.html voor meer uitleg) -->
+<!-- Zorg dat je onder de navigatie ook nog extra gegevens kan inladen -->
+{% import "macros/macro.html" as macro %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<main>
+<nav>
+    <ul>
+        {% block navigation %}
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a  href="{{ url_for('playGame') }}">Play</a></li>
+            <li><a  href="{{ url_for('playGame') }}">Settings</a></li>
+            <li><a  href="{{ url_for('tutorial') }}">Tutorial</a></li>
+            <li><a  href="{{ url_for('contact') }}">Contact</a></li>
+            <li style="position: absolute; right: 50px;"><a  href="{{ url_for('login') }}">Login</a></li>
+        {% endblock %}
+    </ul>
+</nav>
+
+{% block body %}
+
+{% endblock %}
+</main>
+</html>
